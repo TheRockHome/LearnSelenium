@@ -1,0 +1,23 @@
+package TestSeleniumCommand;
+
+public class testAllLinks {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver.exe");
+		WebDriver driver = new ChromeDriver() ;
+
+		driver.manage().window().maximize();
+		driver.get("https://www.guru99.com/using-contains-sbiling-ancestor-to-find-element-in-selenium.html");
+
+		WebElement allsize=driver.findElement(By.cssSelector("#g-mainbar > div:nth-child(2) > div > div > div > div > div"));
+		        System.out.println(allsize.getSize());//Question about size off and size
+		        System.out.println(allsize.findElements(By.tagName("a")).size());
+		        driver.close();
+		}
+
+	}
+
+}

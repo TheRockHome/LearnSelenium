@@ -1,0 +1,31 @@
+package TestSeleniumCommand;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+public class testHandleMenuBars {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "D:/AutomationTraining/Softwares/chromedriver.exe");
+		WebDriver Webdriver = new ChromeDriver() ;
+		
+		EventFiringWebDriver driver = new EventFiringWebDriver(Webdriver) ;
+		testEventListeners lissten = new testEventListeners() ;
+		
+		driver.register(lissten) ;
+
+		driver.manage().window().maximize();
+		driver.get("https://www.cricbuzz.com/");
+		
+		WebElement MainMenu = driver.findElement(By.xpath("//*[@id='seriesDropDown']/a")) ;
+		
+
+	}
+
+}
